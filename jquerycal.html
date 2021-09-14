@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>jquery calculator</title>
+	<link rel="stylesheet" type="text/css" href="style.css"> 
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container">
+		<header>JSCAL</header>
+
+		<input type="number" id="num1" placeholder="ENTER THE FIRST NUMBER"><br><br>
+        <input type="number" id="num2" placeholder="ENTER THE SECOND NUMBER"><br><br>
+
+        <button type="button" onclick="add()">+</button>
+        <button type="button" onclick="sub()">-</button>
+        <button type="button" onclick="mul()">*</button>
+        <button type="button" onclick="div()">/</button>
+       	<span id="result">output</span>
+    </div>
+
+
+    <script type="text/javascript"> 
+    function add() {
+    var n1 = Number($('#num1').val());
+    var n2 = Number($('#num2').val());
+ 	var add = n1 + n2;
+ 	// console.log(add);
+ 	$("#result").html(add);
+  }
+     function sub() {
+     	var n1=Number($("#num1").val());
+     	var n2=Number($("#num2").val());
+     	var sub=n1 - n2;
+     	$("#result").html(sub);
+
+     }
+    function mul() {
+    var n1 = Number($("#num1").val());
+    var n2 = Number($("#num2").val());
+ 	var mul = n1 * n2;
+ 	$("#result").html(mul);
+ }
+ function div() {
+    var n1 = Number($("#num1").val());
+    var n2 = Number($("#num2").val());
+ 	var div = n1 / n2;
+ 	$("#result").html(div);
+ }
+   </script>    
+</body>
+</html>

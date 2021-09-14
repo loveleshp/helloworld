@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>HTML 5</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+	<style>
+		a:link, a:visited {
+  background-color: #f44336;
+  color: black;
+  padding: 2px 5px;
+  text-align: center;
+  text-decoration: underline;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: red;
+}
+
+a:link {
+  color: red;
+}
+
+a:visited {
+  color: yellow;
+}
+
+a:hover {
+  color: peachpuff;
+}
+
+a:active {
+  color: blue;
+}
+li{
+	border-radius: 10px;
+border: 1px solid black;
+    background-color: red;
+}
+.nav dropdown {  
+     position: relative;  
+     display: inline-block;  
+     right: 0;
+}  
+.nav button {  
+     padding: 10px 30px;  
+     font-size: 15px;  
+     float: left;
+}  
+#list-items {  
+		text-align: center;
+    display: none;  
+    position: absolute; 
+    left: 45%; 
+    background-color: white;  
+    min-width: 120px; 
+    float: left;
+}  
+#list-items a {  
+	 top: 0;
+	 left: 0;
+	 right: 0;
+	 position: relative;
+   display: block;  
+   font-size: 18px;  
+   background-color: #ddd;  
+   color: black;  
+   text-decoration: none;  
+   padding: 0px; 
+   margin: 0px;
+
+}  
+		.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4 }
+
+  .active, .accordion:hover {
+  background-color: #ccc;
+}
+  .panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+</style>
+</head>
+
+<body>
+	
+	<div class="container">	
+
+		<header class="border"> <b>AMBAB INFOTECT PVT LTD </b> <marquee><b> To Visit Our Website CLICK ON <a href="https://www.ambab.com/#make-your-products-happen" target="blank"> LINK </a> </b>  </marquee> <a href="file:///home/ambab/formval.html?address=++++++++%09">Login</a> </header>
+		<nav class="border">NAVBAR
+<li > username </li>
+<select> <option> lovelesh.pandey@gmail.com </option>
+<option> loveleshp1234@gmail.com </option> </select>
+<li> password </li>
+<select> <input type ="number" size="20">
+</select>
+
+		</nav>
+	<div class="dropdown">  
+  <button onclick="show_hide()" class="button">Choose Language</button>  
+   <center>  
+      <div id="list-items">  
+         <a href="dropdown.html"> dropdown </a>  
+         <a href="calculator.html"> calculator </a>  
+         <a href="jquerycal.html"> jquerycal</a>  
+         <a href="#"> Chinese </a>  
+         <a href="#"> Japanese </a>  
+      </div>  
+   </center>  
+
+	<SECTION class="section">
+		<article class="border">
+			<div class="articlebox">
+				<h6 class="border">GROUP <select> <option> BSC-IT </option>
+					     <option> BTECT </option>
+					     <option> BE </option>
+					     <option> MSC-IT </option>
+					     <option> BSC </option> </select> </h6>
+				
+			   <p>Calculator <br>
+         <input type="number" id="no1" placeholder="Enter the number"> <br> <br>
+         <input type="number" id="no2" placeholder="Emter the number"> <br> <br>
+        
+        <button type="add" onclick="add1()">+</button>
+         <button type="sub" onclick="sub1()">-</button>
+         <button type="mul" onclick="mul1()">*</button>
+         <button type="div" onclick="div1()">/</button>
+         <button type="mod" onclick="mod1()">%</button>
+         <span id="result2">Output</span>
+         </p>
+			</div>
+        
+			<aside class="border inside">
+	
+		<header>JSCAL</header>
+
+		<input type="number" id="num1" placeholder="ENTER THE FIRST NUMBER"><br><br>
+        <input type="number" id="num2" placeholder="ENTER THE SECOND NUMBER"><br><br>
+
+        <button type="button" onclick="add()">+</button>
+        <button type="button" onclick="sub()">-</button>
+        <button type="button" onclick="mul()">*</button>
+        <button type="button" onclick="div()">/</button>
+       	<span id="result">output</span>
+    </aside>
+		</article>
+		<aside class='border outside'>ASIDE</aside>
+	</SECTION>
+	
+	 <button id="accordion">first</button>
+			<div class="panel">
+				<p>Welcome to jquery</p>
+			</div>
+				<button id="accordion2">second</button>
+				<div class="panel">
+				<p>welcome to javascript</p>
+			  </div>
+			  <button id="accordion3">third</button>
+			  <div class="panel">
+			  	<p>welcome to php</p>
+			</div>
+
+	<footer class="border"> <input type="submit" value="submit"> </footer>
+	
+</div>
+          <script type="text/javascript" src="external.js"></script>
+          <script>
+	  function show_hide() {  
+         var click = document.getElementById("list-items");  
+         if(click.style.display =="none") {  
+            click.style.display ="block";  
+         } else {  
+            click.style.display ="none";  
+         }   
+      }  
+
+</script>
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+  $('#accordion').click(function() {
+      $(this).next().toggle();
+      return false;
+  }).next().hide();
+
+    
+  $('#accordion2').click(function() {
+      $(this).next().toggle();
+      return false;
+  }).next().hide();
+
+   
+  $('#accordion3').click(function() {
+      $(this).next().toggle();
+      return false;
+  }).next().hide();
+});
+</script>
+ <script type="text/javascript"> 
+    function add() {
+    var n1 = Number($('#num1').val());
+    var n2 = Number($('#num2').val());
+ 	var add = n1 + n2;
+ 	// console.log(add);
+ 	$("#result").html(add);
+  }
+     function sub() {
+     	var n1=Number($("#num1").val());
+     	var n2=Number($("#num2").val());
+     	var sub=n1 - n2;
+     	$("#result").html(sub);
+
+     }
+    function mul() {
+    var n1 = Number($("#num1").val());
+    var n2 = Number($("#num2").val());
+ 	var mul = n1 * n2;
+ 	$("#result").html(mul);
+ }
+ function div() {
+    var n1 = Number($("#num1").val());
+    var n2 = Number($("#num2").val());
+ 	var div = n1 / n2;
+ 	$("#result").html(div);
+ }
+   </script>    
+         
+         
+</body>
+</html>
