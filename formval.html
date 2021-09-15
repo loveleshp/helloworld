@@ -1,5 +1,29 @@
 <!DOCTYPE html>
 <html>
+<style>
+	form{
+		height: 20%;
+		width: 50%;
+		left: 20%;
+		position: relative;
+		border: 2px solid orangered;
+		background-color: orchid;
+	}
+	h3{
+		margin: 2px;
+		padding: 2px;
+		height: 30px;
+		text-align: left;
+		background-color: powderblue;
+		border: 1px solid brown;
+		border-radius: 0px;
+	}
+	.container{
+		border: 2px solid powderblue;
+
+	}
+	
+</style>
 <head>
 	<meta charset="utf-8">
 	<title>form validation</title>
@@ -7,38 +31,62 @@
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 </head>
 <body>
-      <form>
+      <form method="POST" id="formsample">
       	<center>
-      	<h3>FIRST NAME</h3><input type="text" id="name" size="20"><br>
-      	<h3>LAST NAME</h3><input type="text" size="20"><br>
-      	<h3>GENDER</h3><input type="radio" id="gender">MALE
-      	<input type="radio">FEMALE
+      	<h3>FIRST NAME</h3><input type="text" id="name" size="50"><small id="nameErr"></small><br>
+      	<h3>LAST NAME</h3><input type="text" size="50"><br>
+      	<h3>GENDER</h3><input type="radio" id="gender" name="r1" checked="true"><small id="genderErr"></small>MALE
+      	<input type="radio" name="r1"><small id="genderErr"></small>FEMALE
          <br>
-         <h3>CONTACT NO.</h3><input type="number" id="contactno" size="10"><br>
-        <h3>ADDRESS</h3><textarea name="address" id="address" rows=4 cols="40">
-        	</textarea><br>
-        	<h3>EMAIL</h3><input type="text" id="email" size="20"><br>
+         <h3>CONTACT NO.</h3><input type="text" id="contactno" minlength="10" maxlength="10"><small id="contactnoErr"></small><br>
+        <h3>ADDRESS</h3>
+
+        <textarea name="address" id="address" rows="4" cols="10">
+        	</textarea><small id="addressErr"></small><br>
+        	<h3>EMAIL</h3><input type="text" id="email" name="email"><small id="emailErr"></small><br>
         <input type="submit" id="submit" value="submit">
         <span id="error"></span>
-         <span id="success"></span>
+         <span id="submit"></span>
         </center>     	
       </form>
+       <div id="message_div">Form Received</div>
 
       <script type="text/javascript">
+      	$('#message_div').hide();
          	$(document).ready(function(){
 		    	$("#submit").click(function(event){
-
-		        if($("#name").val()=="" || $("#email").val()=="" || $("#gender").val()=="" || $("#address").val()=="" || $("#contactno").val()==""){
-
-		            $("#error").text("inputs fields are mandatory....").show().fadeOut(2000);
-		            event.preventDefault();
-		        }else{
-		            $("#success").text("Form Submited...").show().fadeOut(2000);
-		            event.preventDefault();
+		    		event.preventDefault();
+		    		var address = $("#address").val();
+              if($("#name").val()==""){
+		        	$("#nameErr").text("required");
 		        }
-			    });
-			});
-</script>
+		        var re = /^\w+([-+.'][^\s]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+
+               var email = $("#email").val();
+
+               if(!email.match(re)) {
+		        	$("#emailErr").text("required");
+                   
+               }
+
+ 		         if($("#gender").val()==""){
+		        	$("#genderErr").text("required");
+		        }
+		        	if(address.length == 0){ 
+		        	$("#addressErr").html("required");
+		        }
+		        	if($("#contactno").val()==""){
+		        	$("#contactnoErr").text("required");
+		        }
+
+		        console.log(address);
+		        	
+		        	$('#submit').bind('click', function(){
+               $('#message_div').show();
+              });
+		       });
+		    });
+		    </script>
 
 </body>
 </html>

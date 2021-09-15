@@ -12,12 +12,13 @@
 
 		<input type="number" id="num1" placeholder="ENTER THE FIRST NUMBER"><br><br>
         <input type="number" id="num2" placeholder="ENTER THE SECOND NUMBER"><br><br>
+        <input type="reset" id="reset" value="reset">
 
         <button type="button" onclick="add()">+</button>
         <button type="button" onclick="sub()">-</button>
         <button type="button" onclick="mul()">*</button>
         <button type="button" onclick="div()">/</button>
-       	<span id="result">output</span>
+        <span id="result">output</span>
     </div>
 
 
@@ -48,6 +49,13 @@
  	var div = n1 / n2;
  	$("#result").html(div);
  }
+ 
+ $('#reset').click(function(){
+        ($('#num1').val(""));
+        ($('#num2').val(""));
+         
+         $("#result").html("");
+ });
    </script>    
 </body>
 </html>
