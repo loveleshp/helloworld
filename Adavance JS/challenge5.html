@@ -1,0 +1,86 @@
+<script>
+	users=[];
+    class Person{
+	constructor(firstname,lastname, mobilenumber){
+     this.firstname= firstname;
+     this.lastname= lastname;
+     this.mobilenumber=mobilenumber;
+     }
+     fullName(firstname,lastname){
+     return `${firstname}  ${lastname}`;
+      }
+
+     }
+
+let createPerson=(firstname,lastname, mobilenumber)=> {
+return new Promise((resolve, reject)=>{
+if (users.some(user=> user.mobilenumber===mobilenumber)) {
+    reject("The mobile no already exits");
+}else{
+    obj=new Person(firstname,lastname,mobilenumber);
+    users.push(obj);
+    resolve(console.log(obj.fullName(firstname,lastname,mobilenumber)));
+    }
+  })
+
+}
+ let main=async()=>{
+    try{
+       await createPerson("Lovelesh","Pandey",9372949622)
+    }catch(err){
+        console.log(err)
+    }
+    try{
+       await createPerson("Keval","Parikh",6325874159)
+    }catch(err){
+        console.log(err)
+    }
+    try{
+        await createPerson("Akash","Sahani",88879879755)
+    }catch(err){
+        console.log(err)
+    }
+    try{
+        await createPerson("Siddesh","More",963258417)
+    }catch(err){
+        console.log(err)
+    }
+    try{
+        await createPerson("Ashwin","Gupta",9632584175)
+    }catch(err){
+        console.log(err)
+    }
+    try{
+        await createPerson("Sandesh","Kadam",9856564231)
+    }catch(err){
+        console.log(err)
+    }
+    try{
+        await createPerson("Akshay","Shinde",978456321)
+    }catch(err){
+        console.log(err)
+    }
+    try{
+        await createPerson("Sakshi","Pandey",985623471)
+    }catch(err){
+        console.log(err)
+    }
+    try{
+        await createPerson("Sewata","Mishra",9754231865)
+    }catch(err){
+        console.log(err)
+    }
+    try{
+        await createPerson("Shreya","Mishra",9874561355)
+    }catch(err){
+        console.log(err)
+    }
+    
+}
+main();
+
+
+
+
+
+</script>

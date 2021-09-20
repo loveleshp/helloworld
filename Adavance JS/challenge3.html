@@ -1,0 +1,15 @@
+<script>
+let sumPlusMinus=(nums)=> {
+    let plus = 0;
+    let minus = 0;
+     for (let i = 0; i < nums.length; i++) {
+        if (nums[i] > 0) {
+            plus = plus += nums[i];
+        } else {
+            minus = minus += nums[i];
+        }
+    }
+    return {plus:plus, minus:minus};
+}
+console.log(sumPlusMinus([10, -12, 30, -1, -8, 0, 14, -33, 20]));
+</script>
